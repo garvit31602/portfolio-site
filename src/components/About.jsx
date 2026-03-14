@@ -11,7 +11,7 @@ const About = () => {
                 transition={{ duration: 0.5 }}
             >
                 <h2 className="text-3xl font-bold mb-8" style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '2rem' }}>About Me</h2>
-                <div className="grid md:grid-cols-2 gap-12" style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '3rem' }}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                     <div className="space-y-6" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                         <p className="text-gray-400" style={{ color: 'var(--text-muted)' }}>
                             I am a driven developer with a unique blend of expertise in both <span className="text-emerald-400" style={{ color: 'var(--accent-web)' }}>Web Development</span> and <span className="text-violet-400" style={{ color: 'var(--accent-ml)' }}>Machine Learning</span>.

@@ -5,8 +5,8 @@ import { Terminal, Code, Database, BrainCircuit, ArrowRight } from 'lucide-react
 const Hero = () => {
     return (
         <section className="hero-section container min-h-screen flex items-center" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', paddingTop: 'var(--nav-height)' }}>
-            <div className="grid md:grid-cols-2 gap-12 items-center" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'center' }}>
-                <div className="hero-content">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center" style={{ gap: '3rem', alignItems: 'center' }}>
+                <div className="hero-content text-center md:text-left">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -15,15 +15,15 @@ const Hero = () => {
                         <span className="px-3 py-1 rounded-full text-xs font-semibold glass text-emerald-400 mb-6 inline-block" style={{ padding: '0.25rem 0.75rem', borderRadius: '1rem', fontSize: '0.75rem', fontWeight: 600, color: 'var(--accent-web)', marginBottom: '1.5rem', display: 'inline-block' }}>
                             Available for new projects
                         </span>
-                        <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight" style={{ fontSize: '4rem', fontWeight: 'bold', marginBottom: '1.5rem', lineHeight: 1.1 }}>
+                        <h1 className="hero-title font-bold mb-6 leading-tight" style={{ fontWeight: 'bold', marginBottom: '1.5rem', lineHeight: 1.1 }}>
                             Building the future with <br />
                             <span className="gradient-text">Web Dev & ML</span>
                         </h1>
-                        <p className="text-lg text-gray-400 mb-10 max-w-lg" style={{ fontSize: '1.125rem', color: 'var(--text-muted)', marginBottom: '2.5rem', maxWidth: '32rem' }}>
+                        <p className="text-lg text-gray-400 mb-10 max-w-lg mx-auto md:mx-0" style={{ fontSize: '1.125rem', color: 'var(--text-muted)', marginBottom: '2.5rem', maxWidth: '32rem' }}>
                             Passionate developer specializing in creating high-performance web applications and intelligent machine learning models.
                         </p>
 
-                        <div className="flex gap-4" style={{ display: 'flex', gap: '1rem' }}>
+                        <div className="flex gap-4 justify-center md:justify-start" style={{ display: 'flex', gap: '1rem' }}>
                             <a href="#projects" className="btn btn-primary">
                                 View My Work <ArrowRight size={18} />
                             </a>

@@ -43,7 +43,7 @@ const Projects = () => {
             <div className="flex flex-col md:flex-row justify-between items-center mb-12 gap-6" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', marginBottom: '3rem', gap: '1.5rem' }}>
                 <h2 className="text-3xl font-bold" style={{ fontSize: '2rem', fontWeight: 'bold' }}>Featured Projects</h2>
 
-                <div className="flex glass p-1 rounded-2xl" style={{ display: 'flex', padding: '0.25rem', borderRadius: '1rem' }}>
+                <div className="flex flex-wrap glass p-1 rounded-2xl justify-center" style={{ display: 'flex', flexWrap: 'wrap', padding: '0.25rem', borderRadius: '1rem', justifyContent: 'center' }}>
                     {['all', 'web', 'ml'].map((cat) => (
                         <button
                             key={cat}
@@ -68,8 +68,7 @@ const Projects = () => {
 
             <motion.div
                 layout
-                className="grid md:grid-cols-2 gap-8"
-                style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '2rem' }}
+                className="grid grid-cols-1 md:grid-cols-2 gap-12"
             >
                 <AnimatePresence>
                     {filteredProjects.map((project) => (

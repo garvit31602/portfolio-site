@@ -18,7 +18,7 @@ const Skills = () => {
     return (
         <section id="skills" className="container">
             <h2 className="text-3xl font-bold mb-12 text-center" style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '3rem', textAlign: 'center' }}>Tech Stack</h2>
-            <div className="grid md:grid-cols-2 gap-12" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12" style={{ gap: '3rem' }}>
                 {skillCategories.map((category, idx) => (
                     <motion.div
                         key={category.title}

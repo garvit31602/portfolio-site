@@ -11,6 +11,8 @@ const Contact = () => {
         e.preventDefault();
         const form = e.target;
         const data = new FormData(form);
+        // Append production URL to help FormSubmit identify the source
+        data.append('_url', 'https://portfolio-site-pi-amber.vercel.app/');
 
         setStatus('sending');
 
@@ -39,7 +41,7 @@ const Contact = () => {
 
     return (
         <section id="contact" className="container">
-            <div className="grid md:grid-cols-2 gap-12" style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: '4rem' }}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-16 md:gap-x-24">
                 <div>
                     <h2 className="text-3xl font-bold mb-6" style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1.5rem' }}>Get In Touch</h2>
                     <p className="text-gray-400 mb-8" style={{ color: 'var(--text-muted)', marginBottom: '2rem' }}>
@@ -80,7 +82,7 @@ const Contact = () => {
                     </div>
                 </div>
 
-                <div className="relative" style={{ position: 'relative' }}>
+                <div className="relative">
                     <AnimatePresence mode="wait">
                         {!submitted ? (
                             <motion.div
@@ -92,7 +94,7 @@ const Contact = () => {
                                 style={{ padding: '2rem', borderRadius: '1.5rem' }}
                             >
                                 <form onSubmit={handleSubmit} className="space-y-6" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                                    <div className="grid grid-cols-2 gap-4" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         <div className="space-y-2" style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                                             <label className="text-xs font-bold text-gray-400 uppercase" style={{ fontSize: '0.75rem', fontWeight: 'bold', color: '#9ca3af', textTransform: 'uppercase' }}>Name</label>
                                             <input required name="name" type="text" className="w-full glass border-none rounded-xl px-4 py-3 text-sm focus:ring-1 ring-emerald-500 transition-all outline-none" style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: '0.75rem', fontSize: '0.875rem', border: '1px solid var(--glass-border)', background: 'rgba(255,255,255,0.05)', color: 'white' }} placeholder="John Doe" />

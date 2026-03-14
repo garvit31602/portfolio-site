@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Cpu, Code } from 'lucide-react';
 
 const Navbar = () => {
@@ -32,27 +32,49 @@ const Navbar = () => {
                 </a>
 
                 {/* Desktop Nav */}
-                <div className="hidden md:flex gap-8" style={{ display: 'none', gap: '2rem' }}>
+                <div className="hidden md:flex gap-8" style={{ gap: '2rem' }}>
                     {navLinks.map((link) => (
-                        <a key={link.name} href={link.href} className="text-sm font-medium hover:text-emerald-400 transition-colors" style={{ fontSize: '0.875rem', fontWeight: 500, transition: 'color 0.3s' }}>
+                        <a key={link.name} href={link.href} className="nav-link text-sm font-medium hover:text-emerald-400 transition-colors" style={{ fontSize: '0.9rem', fontWeight: 500, opacity: 0.8 }}>
                             {link.name}
                         </a>
                     ))}
                 </div>
 
-                {/* Simple style override for responsiveness since I'm not using Tailwind yet or fully */}
-                <div className="desktop-links" style={{ display: 'flex', gap: '2rem' }}>
-                    {navLinks.map((link) => (
-                        <a key={link.name} href={link.href} className="nav-link" style={{ fontSize: '0.9rem', fontWeight: 500, opacity: 0.8 }}>
-                            {link.name}
-                        </a>
-                    ))}
-                </div>
-
-                {/* Mobile Toggle Placeholder */}
-                <button className="md:hidden" style={{ display: 'none' }}>
-                    <Menu size={24} />
+                {/* Mobile Menu Toggle */}
+                <button
+                    className="md:hidden p-2 text-gray-400 hover:text-white transition-colors"
+                    onClick={() => setIsOpen(!isOpen)}
+                    style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'inherit' }}
+                >
+                    {isOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
+
+                {/* Mobile Menu Overlay */}
+                <AnimatePresence>
+                    {isOpen && (
+                        <motion.div
+                            initial={{ opacity: 0, y: -20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -20 }}
+                            className="absolute top-20 left-0 right-0 glass rounded-3xl p-6 md:hidden"
+                            style={{ position: 'absolute', top: '5rem', left: 0, right: 0, padding: '1.5rem', borderRadius: '1.5rem', zIndex: 100 }}
+                        >
+                            <div className="flex flex-col gap-4" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                                {navLinks.map((link) => (
+                                    <a
+                                        key={link.name}
+                                        href={link.href}
+                                        className="text-lg font-medium p-2 hover:text-emerald-400 transition-colors"
+                                        onClick={() => setIsOpen(false)}
+                                        style={{ fontSize: '1.125rem', fontWeight: 500 }}
+                                    >
+                                        {link.name}
+                                    </a>
+                                ))}
+                            </div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </nav>
         </div>
     );
