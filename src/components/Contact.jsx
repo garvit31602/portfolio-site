@@ -146,7 +146,7 @@ const Contact = () => {
                                 </motion.div>
                                 <h3 className="text-2xl font-bold mb-2" style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>Message Sent!</h3>
                                 <p className="text-gray-400" style={{ color: 'var(--text-muted)' }}>
-                                    Thank you for reaching out, Garvit! <br />
+                                    Thank you for reaching out! <br />
                                     I'll get back to you as soon as possible.
                                 </p>
                             </motion.div>

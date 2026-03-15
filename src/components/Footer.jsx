@@ -1,4 +1,19 @@
-import { Github, Twitter, Linkedin, ChefHat } from 'lucide-react';
+import { Github, Linkedin, ChefHat } from 'lucide-react';
+
+const Leetcode = ({ size = 20 }) => (
+    <svg
+        width={size}
+        height={size}
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+    >
+        <path d="M4.608 14.187l-2.73 2.73a1.5 1.5 0 000 2.122l2.828 2.828a1.5 1.5 0 002.122 0l2.73-2.73M17.392 9.813l2.73-2.73a1.5 1.5 0 000-2.122L17.294 2.133a1.5 1.5 0 00-2.122 0L9.813 7.392M21.636 12.364l-4.242 4.242a1.5 1.5 0 01-2.122 0L5.364 6.703a1.5 1.5 0 010-2.122l4.242-4.242" />
+    </svg>
+);
 
 const Footer = () => {
     return (
@@ -14,7 +29,7 @@ const Footer = () => {
                         {[
                             { icon: <Github size={20} />, href: "https://github.com/garvit31602" },
                             { icon: <Linkedin size={20} />, href: "https://www.linkedin.com/in/garvit-sharma-7bb11a289/" },
-                            { icon: <Twitter size={20} />, href: "https://x.com/Garvit31602" },
+                            { icon: <Leetcode size={20} />, href: "https://leetcode.com/u/garvit31602/" },
                             { icon: <ChefHat size={20} />, href: "https://www.codechef.com/users/garvit2002" },
                         ].map((social, idx) => (
                             <a
